@@ -83,8 +83,8 @@
         app:layout_constraintTop_toBottomOf="@+id/signuppassword"
         tools:ignore="TouchTargetSizeCheck" />
 
-    <Button
-        android:id="@+id/signupbotton"
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/signupButton"
         android:layout_width="match_parent"
         android:layout_height="60dp"
         android:layout_gravity="start"
@@ -99,8 +99,8 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/signuppasswordrepeat" />
 
-    <Button
-        android:id="@+id/registrer"
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/registrerSignupButton"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="start"
@@ -114,6 +114,6 @@
         android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/signupbotton" />
+        app:layout_constraintTop_toBottomOf="@+id/signupButton" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -31,4 +31,5 @@
     <string name="invalid_username">Usuario no valido</string>
     <string name="invalid_password">Al menos debe tener 5 caracteres</string>
     <string name="login_failed">"Login fallido"</string>
+
 </resources>

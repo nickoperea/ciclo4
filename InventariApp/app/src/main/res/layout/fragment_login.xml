@@ -49,7 +49,7 @@
         app:layout_constraintTop_toBottomOf="@+id/username" />
 
     <com.google.android.material.button.MaterialButton
-        android:id="@+id/loginbutton"
+        android:id="@+id/loginButton"
         android:layout_width="match_parent"
         android:layout_height="60dp"
         android:layout_gravity="start"
@@ -66,7 +66,7 @@
         app:layout_constraintTop_toBottomOf="@+id/passwordlogin" />
 
     <com.google.android.material.button.MaterialButton
-        android:id="@+id/registrerbutton"
+        android:id="@+id/registrerButton"
         android:layout_width="match_parent"
         android:layout_height="60dp"
         android:layout_gravity="start"
@@ -81,7 +81,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/loginbutton"
+        app:layout_constraintTop_toBottomOf="@+id/loginButton"
         app:rippleColor="@color/ic_launcher_background" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
