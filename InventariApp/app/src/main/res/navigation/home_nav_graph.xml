@@ -13,12 +13,12 @@
     <fragment
         android:id="@+id/productFragment"
         android:name="com.nickoperea.inventariapp.ui.fragments.ProductFragment"
-        android:label="Productos Inventary APP"
+        android:label="Productos"
         tools:layout="@layout/fragment_product" />
     <fragment
         android:id="@+id/profileFragment"
         android:name="com.nickoperea.inventariapp.ui.fragments.ProfileFragment"
-        android:label="Perfil de Usuario InventaryApp"
+        android:label="Mi Perfil de Usuario"
         tools:layout="@layout/fragment_profile" />
     <fragment
         android:id="@+id/homeFragment"
