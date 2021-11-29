@@ -12,13 +12,31 @@
         <!-- Status bar color. -->
         <item name="android:statusBarColor" tools:targetApi="l">?attr/colorPrimaryVariant</item>
         <item name="textAppearanceHeadline1">@style/MyHeadLine</item>
+        <item name="textAppearanceSubtitle1">@style/Theme.InventariApp.Subtitle1</item>
+        <item name="textAppearanceBody1">@style/Theme.InventariApp.Body1</item>
         <!-- Customize your theme here. -->
         <item name="background">@color/claregreen</item>
+
+    </style>
+
+    <style name="Theme.InventariApp.Subtitle1" parent="TextAppearance.MaterialComponents.Subtitle1" >
+        <item name="android:fontFamily">@font/lato</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:textAllCaps">true</item>
+    </style>
+
+    <style name="Theme.InventariApp.Body1" parent="TextAppearance.MaterialComponents.Body1" >
+        <item name="android:fontFamily">@font/lato</item>
     </style>
 
     <style name="Theme.InventariApp.NoActionBar">
         <item name="windowActionBar">false</item>
         <item name="windowNoTitle">true</item>
+    </style>
+
+    <style name="roundedImage">
+        <item name="cornerFamily">rounded</item>
+        <item name="cornerSize">50%</item>
     </style>
 
     <style name="MyHeadLine" parent="TextAppearance.MaterialComponents.Headline1">

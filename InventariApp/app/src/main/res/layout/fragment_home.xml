@@ -12,14 +12,54 @@
 
         <TextView
             android:id="@+id/home_title"
+            android:layout_marginVertical="@dimen/fab_margin"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:fontFamily="@font/lato"
+            android:text="Mi tienda"
+            android:textAppearance="?attr/textAppearanceSubtitle1"
             app:layout_constraintLeft_toLeftOf="parent"
             app:layout_constraintRight_toRightOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            android:text=""
-            android:textAppearance="?attr/textAppearanceSubtitle1"
-            android:fontFamily=""/>
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <com.google.android.material.imageview.ShapeableImageView
+            android:id="@+id/home_image"
+            android:layout_width="@dimen/Imagesize"
+            android:layout_height="@dimen/Imagesize"
+            android:adjustViewBounds="true"
+            android:scaleType="centerCrop"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/home_title"
+            android:layout_marginTop="@dimen/fab_margin"
+            app:srcCompat="@mipmap/ic_launcher_round"
+            app:shapeAppearanceOverlay="@style/roundedImage"/>
+
+        <TextView
+            android:id="@+id/home_adress"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/calle_falsa_123"
+            android:layout_marginVertical="@dimen/fab_margin"
+            app:layout_constraintLeft_toLeftOf="@+id/home_image"
+            app:layout_constraintEnd_toEndOf="@+id/home_image"
+            app:layout_constraintTop_toBottomOf="@+id/home_image"
+            android:textAppearance="?attr/textAppearanceBody1"/>
+
+        <TextView
+            android:id="@+id/home_description"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="@dimen/fab_margin"
+            android:layout_marginVertical="@dimen/fab_margin"
+            android:layout_marginTop="16dp"
+            android:fontFamily="@font/lato"
+            android:text="Somos una empresa que se dedica al sector empresarial y que su mayor logro es que tengas una tienda de barrio en una app"
+            android:textAppearance="?attr/textAppearanceBody1"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/home_adress" />
+
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 
