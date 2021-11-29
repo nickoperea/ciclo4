@@ -31,24 +31,23 @@ class LoginFragment : Fragment() {
 
             if (!binding.LoginEmail.text.isValidEmail()){
                 isValid = false
-                binding.LoginEmailLayout.error = "correo electronico no valido"
+                binding.LoginEmailLayout.error = getString(R.string.required_email_field)
             }else{
                 binding.LoginEmailLayout.error = null
             }
 
             if(binding.LoginPassword.text.toString().length < 4){
                 isValid = false
-                binding.LoginPasswordLayout.error = "contraseña invalida"
+                binding.LoginPasswordLayout.error = getString(R.string.required_password_field)
             }else {
                 binding.LoginPasswordLayout.error = null
             }
 
             if(isValid) {
-                val intent = Intent(requireContext(), HomeActivity::class.java)
-                startActivity(intent)
+                startActivity(Intent(requireContext(), HomeActivity::class.java))
             }
         }
-        binding.registrerButton.setOnClickListener {
+        binding.registerButton.setOnClickListener {
             findNavController().navigate(R.id.action_loginFragment_to_signupFragment)
         }
     }
