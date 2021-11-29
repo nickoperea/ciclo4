@@ -1,4 +1,4 @@
-package com.nickoperea.inventariapp
+package com.nickoperea.inventariapp.ui.fragments
 
 import android.os.Bundle
 import androidx.fragment.app.Fragment

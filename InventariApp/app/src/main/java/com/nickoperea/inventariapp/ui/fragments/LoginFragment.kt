@@ -1,4 +1,4 @@
-package com.nickoperea.inventariapp
+package com.nickoperea.inventariapp.ui.fragments
 
 import android.content.Intent
 import android.os.Bundle
@@ -7,7 +7,10 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.navigation.fragment.findNavController
+import com.nickoperea.inventariapp.ui.activities.HomeActivity
+import com.nickoperea.inventariapp.R
 import com.nickoperea.inventariapp.databinding.FragmentLoginBinding
+import com.nickoperea.inventariapp.isValidEmail
 
 class LoginFragment : Fragment() {
 

@@ -1,10 +1,11 @@
-package com.nickoperea.inventariapp
+package com.nickoperea.inventariapp.ui.activities
 
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.animation.Animation
 import android.view.animation.AnimationUtils
+import com.nickoperea.inventariapp.R
 import com.nickoperea.inventariapp.databinding.ActivitySplashBinding
 
 class SplashActivity : AppCompatActivity() {

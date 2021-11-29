@@ -1,15 +1,14 @@
-package com.nickoperea.inventariapp
+package com.nickoperea.inventariapp.ui.activities
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.view.LayoutInflater
 import androidx.navigation.findNavController
 import androidx.navigation.ui.AppBarConfiguration
 import androidx.navigation.ui.navigateUp
 import androidx.navigation.ui.setupActionBarWithNavController
 import androidx.navigation.ui.setupWithNavController
+import com.nickoperea.inventariapp.R
 import com.nickoperea.inventariapp.databinding.ActivityHomeBinding
-import com.nickoperea.inventariapp.databinding.ActivityMainBinding
 
 class HomeActivity : AppCompatActivity() {
 
