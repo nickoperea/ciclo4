@@ -35,4 +35,19 @@
     <string name="login_failed">"Inicio de sesión fallido"</string>
     <string name="calle_falsa_123">Calle falsa 123</string>
 
+    <!-- Fragments-->
+    <!--    Home Fragment-->
+    <string name="home_fragment_title">Principal</string>
+
+
+    <!--    Comment Fragment-->
+    <string name="comment_fragment_title">Comentarios</string>
+
+
+    <!--    Product Fragment-->
+    <string name="product_fragment_title">Productos</string>
+
+
+    <!--    Profile Fragment-->
+    <string name="profile_fragment_title">Perfíl</string>
 </resources>
