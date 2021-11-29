@@ -5,3 +5,4 @@ class StoreRepositorie {private val dataSource: StoreInfoMock}{
         return dataSource.loadInfo()
     }
 }
+
