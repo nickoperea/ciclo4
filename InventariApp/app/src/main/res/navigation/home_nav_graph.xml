@@ -8,21 +8,21 @@
     <fragment
         android:id="@+id/commentFragment"
         android:name="com.nickoperea.inventariapp.ui.fragments.CommentFragment"
-        android:label="Comentarios"
+        android:label="@string/comment_fragment_title"
         tools:layout="@layout/fragment_comment" />
     <fragment
         android:id="@+id/productFragment"
         android:name="com.nickoperea.inventariapp.ui.fragments.ProductFragment"
-        android:label="Productos"
+        android:label="@string/product_fragment_title"
         tools:layout="@layout/fragment_product" />
     <fragment
         android:id="@+id/profileFragment"
         android:name="com.nickoperea.inventariapp.ui.fragments.ProfileFragment"
-        android:label="Mi Perfil de Usuario"
+        android:label="@string/profile_fragment_title"
         tools:layout="@layout/fragment_profile" />
     <fragment
         android:id="@+id/homeFragment"
         android:name="com.nickoperea.inventariapp.ui.fragments.HomeFragment"
-        android:label="Principal"
+        android:label="@string/home_fragment_title"
         tools:layout="@layout/fragment_home" />
 </navigation>
