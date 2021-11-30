@@ -50,4 +50,9 @@
 
     <!--    Profile Fragment-->
     <string name="profile_fragment_title">Perfíl</string>
+    <string name="product_detail_fragment_title">Detalle del producto</string>
+    <string name="bottom_nav_menu_home">Principal</string>
+    <string name="bottom_nav_menu_product">Producto</string>
+    <string name="bottom_nav_menu_comment">Comentarios</string>
+    <string name="bottom_nav_menu_profile">Perfil</string>
 </resources>

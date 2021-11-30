@@ -5,24 +5,24 @@
         android:id="@+id/homeFragment"
         android:enabled="true"
         android:icon="@drawable/ic_home_24"
-        android:title="home"/>
+        android:title="@string/bottom_nav_menu_home"/>
 
     <item
         android:id="@+id/productFragment"
         android:enabled="true"
         android:icon="@drawable/ic_shopping_bag_24"
-        android:title="product"/>
+        android:title="@string/bottom_nav_menu_product"/>
 
     <item
         android:id="@+id/commentFragment"
         android:enabled="true"
         android:icon="@drawable/ic_comment_24"
-        android:title="comment"/>
+        android:title="@string/bottom_nav_menu_comment"/>
 
     <item
         android:id="@+id/profileFragment"
         android:enabled="true"
         android:icon="@drawable/ic_person_24"
-        android:title="profile"/>
+        android:title="@string/bottom_nav_menu_profile"/>
 
 </menu>
