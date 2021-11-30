@@ -1,8 +1,10 @@
 package com.nickoperea.inventariapp.data.repositories
 
-class ProductRepository { private val dataSource: ProductMock}{
-    suspend fun loadProducts(): List<Product>{
-        return dataSource.loadProducts()
+import com.nickoperea.inventariapp.data.mockups.ProductMock
+import com.nickoperea.inventariapp.data.models.Product
+
+class ProductRepository(val dataSource: ProductMock) {
+    suspend fun loadData(): List<Product> {
+        return dataSource.loadData()
     }
 }
-

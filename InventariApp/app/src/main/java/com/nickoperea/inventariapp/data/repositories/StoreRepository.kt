@@ -1,8 +1,10 @@
 package com.nickoperea.inventariapp.data.repositories
 
-class StoreRepositorie {private val dataSource: StoreInfoMock}{
-    suspend fun loadInfo(): StoreInfo{
-        return dataSource.loadInfo()
+import com.nickoperea.inventariapp.data.mockups.StoreInfoMock
+import com.nickoperea.inventariapp.data.models.StoreInfo
+
+class StoreRepository(val dataSource: StoreInfoMock) {
+    suspend fun loadData(): StoreInfo {
+        return dataSource.loadData()
     }
 }
-

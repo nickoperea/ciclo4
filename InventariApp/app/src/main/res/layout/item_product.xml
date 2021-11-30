@@ -5,17 +5,16 @@
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     app:cardCornerRadius="@dimen/corner_radius_card"
-    app:shapeAppearanceOverLay="@style/cutCard"
     android:layout_marginBottom="@dimen/default_margin">
 
-     
+
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:paddingBottom="@dimen/small_margin">
 
         <com.google.android.material.imageview.ShapeableImageView
-            android:id="@+id/item_product_photo"
+            android:id="@+id/product_image_frame"
             app:layout_constraintLeft_toLeftOf="parent"
             app:layout_constraintTop_toTopOf="parent"
             app:layout_constraintRight_toRightOf="parent"
@@ -27,11 +26,11 @@
 
             />
         <TextView
-            android:id="@+id/item_product_name"
+            android:id="@+id/product_title_label"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             app:layout_constraintLeft_toLeftOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/item_product_photo"
+            app:layout_constraintTop_toBottomOf="@+id/product_image_frame"
             android:layout_marginHorizontal="@dimen/default_margin"
             tools:text="Mi producto"
             android:textAppearance="?attr/textAppearanceSubtitle1"
@@ -39,11 +38,11 @@
             />
 
         <TextView
-            android:id="@+id/item_product_price"
+            android:id="@+id/product_price_label"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             app:layout_constraintLeft_toLeftOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/item_product_name"
+            app:layout_constraintTop_toBottomOf="@+id/product_title_label"
             android:layout_marginHorizontal="@dimen/default_margin"
             tools:text="4000"
             android:textAppearance="?attr/textAppearanceBody1"
