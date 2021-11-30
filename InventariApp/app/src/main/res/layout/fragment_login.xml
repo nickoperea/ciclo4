@@ -32,6 +32,7 @@
         app:layout_constraintTop_toBottomOf="@+id/imageView"
         app:layout_constraintBottom_toTopOf="@+id/LoginPasswordLayout"
         app:layout_constraintVertical_chainStyle="packed"
+        app:startIconDrawable="@drawable/ic_baseline_alternate_email_24"
         style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.Dense">
 
         <com.google.android.material.textfield.TextInputEditText
@@ -48,12 +49,14 @@
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:hint="@string/prompt_password"
-        android:inputType="textEmailAddress"
+        android:inputType="textPassword"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/LoginEmailLayout"
         app:layout_constraintBottom_toTopOf="@+id/loginButton"
         app:layout_constraintVertical_chainStyle="packed"
+        app:endIconMode="password_toggle"
+        app:startIconDrawable="@drawable/baseline_lock_24"
         style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.Dense">
 
         <com.google.android.material.textfield.TextInputEditText
@@ -87,16 +90,17 @@
         android:layout_height="60dp"
         android:layout_gravity="start"
         android:layout_marginStart="48dp"
-        android:layout_marginTop="20dp"
+        android:layout_marginTop="100dp"
         android:layout_marginEnd="48dp"
         android:background="@drawable/button_rounded_border"
         android:text="@string/action_register"
-        android:textColor="@color/claregreen"
+        android:textColor="@color/teal_700"
         android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/loginButton"
-        app:rippleColor="@color/ic_launcher_background" />
+        app:rippleColor="@color/ic_launcher_background"
+        style="@style/Widget.MaterialComponents.Button.TextButton"/>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -19,9 +19,9 @@
     <string name="password_settings_confirm_new_password">Confirmar contraseña</string>
     <!-- Strings related to login -->
     <string name="prompt_email">Ingrese su correo</string>
-    <string name="prompt_user">Usuario</string>
+    <string name="prompt_user">Ingrese su suario</string>
     <string name="prompt_password">Ingrese su contraseña</string>
-    <string name="prompt_passwordRepeat">Repetir contraseña</string>
+    <string name="prompt_passwordRepeat">Repita su contraseña</string>
     <string name="action_sign_in">Iniciar sesión</string>
     <string name="action_sign_up">Registrarse</string>
     <string name="action_register">¿No tienes cuenta con nosotros?</string>
