@@ -1,6 +1,6 @@
 package com.nickoperea.inventariapp.data.models
 
-class Product (
+data class Product (
     var id: Long,
     var name: String,
     var image: String,

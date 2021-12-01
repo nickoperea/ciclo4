@@ -2,7 +2,7 @@ package com.nickoperea.inventariapp.data.models
 
 import java.util.*
 
-class Comment(
+data class Comment(
     var id: Long,
     var description: String,
     var author: String,

@@ -24,17 +24,13 @@ class ProductAdapter(var items: List<Product>): RecyclerView.Adapter<ProductAdap
         holder.item.productTitleLabel.text = item.name
         holder.item.productPriceLabel.text = item.price.toString()
         Glide.with(holder.itemView).load(item.image).into(holder.item.productImageFrame)
-        holder.item.root.setOnClickListener{
+        holder.item.root.setOnClickListener {
             listener?.onClick(item)
         }
     }
 
     override fun getItemCount(): Int {
         return items.size
-    }
-
-    override fun getItemViewType(position: Int): Int {
-        return super.getItemViewType(position)
     }
 
     fun newDataSet(newData: List<Product>) {
