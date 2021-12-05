@@ -34,6 +34,7 @@
     <string name="required_password_field">"Contraseña inválida"</string>
     <string name="login_failed">"Inicio de sesión fallido"</string>
     <string name="calle_falsa_123">Calle falsa 123</string>
+    <string name="logout">Cerrar Sesión</string>
 
     <!-- Fragments-->
     <!--    Home Fragment-->
