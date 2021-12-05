@@ -1,11 +1,17 @@
 package com.nickoperea.inventariapp.data.models
 
+import androidx.room.ColumnInfo
+import androidx.room.Entity
+import androidx.room.PrimaryKey
+import com.nickoperea.inventariapp.utils.STORE_TABLE_NAME
+
+@Entity(tableName = STORE_TABLE_NAME)
 data class StoreInfo (
-    var id: Long,
-    var name: String,
-    var image: String,
-    var address: String,
-    var description: String,
-    var latitude: Double? = null,
-    var longitude: Double? = null
+    @PrimaryKey @ColumnInfo(name = "id") var id: Long,
+    @ColumnInfo(name = "name") var name: String?,
+    @ColumnInfo(name = "image") var image: String?,
+    @ColumnInfo(name = "address") var address: String?,
+    @ColumnInfo(name = "description") var description: String?,
+    @ColumnInfo(name = "latitude") var latitude: Double? = null,
+    @ColumnInfo(name = "longitude") var longitude: Double? = null
 )

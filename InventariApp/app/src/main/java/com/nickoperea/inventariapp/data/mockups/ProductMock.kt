@@ -3,7 +3,7 @@ package com.nickoperea.inventariapp.data.mockups
 import com.nickoperea.inventariapp.data.models.Product
 
 class ProductMock {
-    fun loadData(): List<Product> {
+    fun loadProducts(): List<Product> {
         return listOf(
             Product(1,
                 "Producto 1",

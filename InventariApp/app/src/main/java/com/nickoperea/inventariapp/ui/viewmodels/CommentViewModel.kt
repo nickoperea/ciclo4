@@ -14,7 +14,7 @@ class CommentViewModel(private val repo: CommentRepository): ViewModel() {
 
     fun loadData() {
         viewModelScope.launch {
-            val result = repo.loadData()
+            val result = repo.loadComments()
             _data.postValue(result)
         }
     }

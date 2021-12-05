@@ -14,7 +14,7 @@ class StoreViewModel(private val repo: StoreRepository): ViewModel() {
 
     fun loadData() {
         viewModelScope.launch {
-            val result = repo.loadData()
+            val result = repo.loadInfo()
             _data.postValue(result)
         }
     }

@@ -2,6 +2,7 @@ package com.nickoperea.inventariapp
 
 import android.app.Application
 import com.nickoperea.inventariapp.di.dataSourceModule
+import com.nickoperea.inventariapp.di.databaseModule
 import com.nickoperea.inventariapp.di.repoModule
 import com.nickoperea.inventariapp.di.viewModelsModule
 import org.koin.android.ext.koin.androidContext
@@ -15,7 +16,8 @@ class App: Application() {
             modules(
                 dataSourceModule,
                 repoModule,
-                viewModelsModule
+                viewModelsModule,
+                databaseModule
             )
         }
     }
