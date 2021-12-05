@@ -1,12 +1,11 @@
 package com.nickoperea.inventariapp.ui.fragments
 
 import android.os.Bundle
-import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.fragment.app.Fragment
 import com.bumptech.glide.Glide
-import com.nickoperea.inventariapp.R
 import com.nickoperea.inventariapp.databinding.FragmentProductDetailBinding
 import com.nickoperea.inventariapp.ui.viewmodels.ProductViewModel
 import org.koin.androidx.viewmodel.ext.android.sharedViewModel

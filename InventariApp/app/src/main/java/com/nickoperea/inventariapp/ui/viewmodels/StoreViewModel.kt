@@ -9,13 +9,13 @@ import com.nickoperea.inventariapp.data.repositories.StoreRepository
 import kotlinx.coroutines.launch
 
 class StoreViewModel(private val repo: StoreRepository): ViewModel() {
-    private var _data: MutableLiveData<StoreInfo> = MutableLiveData()
-    val data: LiveData<StoreInfo> get() = _data
+    private var _info: MutableLiveData<StoreInfo> = MutableLiveData()
+    val info: LiveData<StoreInfo> get() = _info
 
-    fun loadData() {
+    fun loadInfo() {
         viewModelScope.launch {
-            val result = repo.loadData()
-            _data.postValue(result)
+            val result = repo.loadInfo()
+            _info.postValue(result)
         }
     }
 }

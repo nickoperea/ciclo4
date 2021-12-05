@@ -10,7 +10,7 @@ import androidx.navigation.fragment.findNavController
 import com.nickoperea.inventariapp.ui.activities.HomeActivity
 import com.nickoperea.inventariapp.R
 import com.nickoperea.inventariapp.databinding.FragmentLoginBinding
-import com.nickoperea.inventariapp.isValidEmail
+import com.nickoperea.inventariapp.utils.isValidEmail
 
 class LoginFragment : Fragment() {
 

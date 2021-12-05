@@ -9,11 +9,6 @@ import androidx.navigation.fragment.findNavController
 import com.nickoperea.inventariapp.R
 import com.nickoperea.inventariapp.databinding.FragmentSignupBinding
 
-/**
- * A simple [Fragment] subclass.
- * Use the [SignupFragment.newInstance] factory method to
- * create an instance of this fragment.
- */
 class SignupFragment : Fragment() {
 
     private var _binding: FragmentSignupBinding? = null

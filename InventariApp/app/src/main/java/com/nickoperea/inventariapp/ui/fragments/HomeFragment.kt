@@ -1,21 +1,15 @@
 package com.nickoperea.inventariapp.ui.fragments
 
 import android.os.Bundle
-import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.fragment.app.Fragment
 import com.bumptech.glide.Glide
 import com.nickoperea.inventariapp.databinding.FragmentHomeBinding
-import com.nickoperea.inventariapp.databinding.FragmentLoginBinding
 import com.nickoperea.inventariapp.ui.viewmodels.StoreViewModel
 import org.koin.androidx.viewmodel.ext.android.sharedViewModel
 
-/**
- * A simple [Fragment] subclass.
- * Use the [HomeFragment.newInstance] factory method to
- * create an instance of this fragment.
- */
 class HomeFragment : Fragment() {
 
     private var _binding: FragmentHomeBinding? = null
@@ -33,12 +27,12 @@ class HomeFragment : Fragment() {
 
     override fun onStart() {
         super.onStart()
-        storeViewModel.loadData()
+        storeViewModel.loadInfo()
         observeViewModels()
     }
 
     private fun observeViewModels() {
-        storeViewModel.data.observe(viewLifecycleOwner, {info ->
+        storeViewModel.info.observe(viewLifecycleOwner, {info ->
             binding.homeTitle.text = info.name
             binding.homeAdress.text = info.address
             binding.homeDescription.text = info.description

@@ -9,16 +9,16 @@ import com.nickoperea.inventariapp.data.repositories.ProductRepository
 import kotlinx.coroutines.launch
 
 class ProductViewModel(private val repo: ProductRepository): ViewModel() {
-    private var _data: MutableLiveData<List<Product>> = MutableLiveData()
-    val data: LiveData<List<Product>> get() = _data
+    private var _products: MutableLiveData<List<Product>> = MutableLiveData()
+    val products: LiveData<List<Product>> get() = _products
 
     private var _selected: MutableLiveData<Product> = MutableLiveData()
     val selected: LiveData<Product> get() = _selected
 
-    fun loadData() {
+    fun loadProducts() {
         viewModelScope.launch {
-            val result = repo.loadData()
-            _data.postValue(result)
+            val result = repo.loadProducts()
+            _products.postValue(result)
         }
     }
 

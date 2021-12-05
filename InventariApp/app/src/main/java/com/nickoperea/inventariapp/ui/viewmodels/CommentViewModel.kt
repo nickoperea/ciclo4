@@ -9,13 +9,13 @@ import com.nickoperea.inventariapp.data.repositories.CommentRepository
 import kotlinx.coroutines.launch
 
 class CommentViewModel(private val repo: CommentRepository): ViewModel() {
-    private var _data: MutableLiveData<List<Comment>> = MutableLiveData()
-    val data: LiveData<List<Comment>> get() = _data
+    private var _comments: MutableLiveData<List<Comment>> = MutableLiveData()
+    val comments: LiveData<List<Comment>> get() = _comments
 
-    fun loadData() {
+    fun loadComments() {
         viewModelScope.launch {
-            val result = repo.loadData()
-            _data.postValue(result)
+            val result = repo.loadComments()
+            _comments.postValue(result)
         }
     }
 }

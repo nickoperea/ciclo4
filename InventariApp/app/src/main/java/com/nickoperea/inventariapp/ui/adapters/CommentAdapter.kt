@@ -5,9 +5,7 @@ import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
 import com.nickoperea.inventariapp.data.models.Comment
-import com.nickoperea.inventariapp.data.models.Product
 import com.nickoperea.inventariapp.databinding.ItemCommentBinding
-import com.nickoperea.inventariapp.databinding.ItemProductBinding
 
 class CommentAdapter(var items: List<Comment>): RecyclerView.Adapter<CommentAdapter.ViewHolder>() {
     class ViewHolder(val item: ItemCommentBinding): RecyclerView.ViewHolder(item.root)

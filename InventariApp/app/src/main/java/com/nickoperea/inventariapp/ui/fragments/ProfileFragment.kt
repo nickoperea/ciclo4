@@ -1,29 +1,20 @@
 package com.nickoperea.inventariapp.ui.fragments
 
-import android.Manifest.permission.CAMERA
 import android.app.Activity
-import android.content.Context
 import android.content.Intent
 import android.content.pm.PackageManager
 import android.graphics.Bitmap
 import android.os.Bundle
 import android.provider.MediaStore
-import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.core.app.ActivityCompat
 import androidx.core.content.ContextCompat
-import com.nickoperea.inventariapp.databinding.FragmentCommentBinding
+import androidx.fragment.app.Fragment
 import com.nickoperea.inventariapp.databinding.FragmentProfileBinding
-import java.lang.Exception
-import java.util.jar.Manifest
 
-/**
- * A simple [Fragment] subclass.
- * Use the [ProfileFragment.newInstance] factory method to
- * create an instance of this fragment.
- */
+
 class ProfileFragment : Fragment() {
 
     private var _binding: FragmentProfileBinding? = null

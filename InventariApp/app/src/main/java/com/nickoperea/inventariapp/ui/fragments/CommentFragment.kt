@@ -11,11 +11,7 @@ import com.nickoperea.inventariapp.ui.adapters.CommentAdapter
 import com.nickoperea.inventariapp.ui.viewmodels.CommentViewModel
 import org.koin.androidx.viewmodel.ext.android.viewModel
 
-/**
- * A simple [Fragment] subclass.
- * Use the [CommentFragment.newInstance] factory method to
- * create an instance of this fragment.
- */
+
 class CommentFragment : Fragment() {
 
     private var _binding: FragmentCommentBinding? = null
@@ -35,7 +31,7 @@ class CommentFragment : Fragment() {
 
     override fun onStart() {
         super.onStart()
-        commentViewModel.loadData()
+        commentViewModel.loadComments()
         commentAdapter = CommentAdapter(
             listOf()
         )
@@ -49,7 +45,7 @@ class CommentFragment : Fragment() {
     }
 
     private fun observeViewModels() {
-        commentViewModel.data.observe(viewLifecycleOwner, { comments ->
+        commentViewModel.comments.observe(viewLifecycleOwner, { comments ->
             commentAdapter.newDataSet(comments)
         })
     }

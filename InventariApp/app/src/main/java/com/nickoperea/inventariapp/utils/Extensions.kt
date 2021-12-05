@@ -1,4 +1,4 @@
-package com.nickoperea.inventariapp
+package com.nickoperea.inventariapp.utils
 
 import android.util.Patterns
 

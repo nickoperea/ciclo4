@@ -16,11 +16,7 @@ import com.nickoperea.inventariapp.ui.listeners.OnProductListener
 import com.nickoperea.inventariapp.ui.viewmodels.ProductViewModel
 import org.koin.androidx.viewmodel.ext.android.sharedViewModel
 
-/**
- * A simple [Fragment] subclass.
- * Use the [ProductFragment.newInstance] factory method to
- * create an instance of this fragment.
- */
+
 class ProductFragment : Fragment() {
 
     private var _binding: FragmentProductBinding? = null
@@ -40,13 +36,14 @@ class ProductFragment : Fragment() {
 
     override fun onStart() {
         super.onStart()
-        productViewModel.loadData()
+        productViewModel.products
         productAdapter = ProductAdapter(
             listOf()
         )
 
         productAdapter.listener = object: OnProductListener {
             override fun onClick(item: Product) {
+                Log.d("PRODUCT", item.name!!)
                 productViewModel.selectProduct(item)
                 findNavController().navigate(R.id.action_productFragment_to_productDetailFragment)
             }
@@ -60,8 +57,8 @@ class ProductFragment : Fragment() {
         observeViewModels()
     }
 
-    fun observeViewModels() {
-        productViewModel.data.observe(viewLifecycleOwner, { products ->
+    private fun observeViewModels() {
+        productViewModel.products.observe(viewLifecycleOwner, { products ->
             productAdapter.newDataSet(products)
         })
     }

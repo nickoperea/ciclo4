@@ -3,7 +3,7 @@ package com.nickoperea.inventariapp.data.mockups
 import com.nickoperea.inventariapp.data.models.StoreInfo
 
 class StoreInfoMock {
-    fun loadData(): StoreInfo {
+    fun loadInfo(): StoreInfo {
         return StoreInfo(
             1,
             "InventariApp",
