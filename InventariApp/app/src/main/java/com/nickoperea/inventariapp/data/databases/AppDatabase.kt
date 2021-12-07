@@ -10,6 +10,7 @@ import com.nickoperea.inventariapp.data.databases.dao.StoreDao
 import com.nickoperea.inventariapp.data.models.Comment
 import com.nickoperea.inventariapp.data.models.Product
 import com.nickoperea.inventariapp.data.models.StoreInfo
+import com.nickoperea.inventariapp.utils.DATABASE_NAME
 
 @Database(
     entities = [
@@ -36,7 +37,7 @@ abstract class AppDatabase: RoomDatabase() {
                         .databaseBuilder(
                             context.applicationContext,
                             AppDatabase::class.java,
-                            "inventariapp.db")
+                            DATABASE_NAME)
                         .build()
                 }
             }

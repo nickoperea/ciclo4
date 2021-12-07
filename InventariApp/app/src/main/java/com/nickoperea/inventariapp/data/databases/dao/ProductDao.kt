@@ -9,8 +9,8 @@ import com.nickoperea.inventariapp.utils.PRODUCT_TABLE_NAME
 @Dao
 interface ProductDao {
     @Insert
-    suspend fun insertProducts(products: List<Product>)
+    fun insertProducts(products: List<Product>)
 
     @Query("SELECT * FROM $PRODUCT_TABLE_NAME")
-    suspend fun getAllProducts(): List<Product>
+    fun getAllProducts(): List<Product>
 }

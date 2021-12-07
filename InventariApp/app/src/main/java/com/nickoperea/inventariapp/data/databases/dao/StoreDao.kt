@@ -9,8 +9,8 @@ import com.nickoperea.inventariapp.utils.STORE_TABLE_NAME
 @Dao
 interface StoreDao {
     @Insert
-    suspend fun insertStore(store: StoreInfo)
+    fun insertStore(store: StoreInfo)
 
     @Query("SELECT * FROM $STORE_TABLE_NAME")
-    suspend fun getStore(): StoreInfo?
+    fun getStore(): StoreInfo?
 }
