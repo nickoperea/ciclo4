@@ -5,6 +5,7 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.lifecycle.Observer
 import com.bumptech.glide.Glide
 import com.nickoperea.inventariapp.databinding.FragmentHomeBinding
 import com.nickoperea.inventariapp.databinding.FragmentLoginBinding
@@ -38,7 +39,7 @@ class HomeFragment : Fragment() {
     }
 
     private fun observeViewModels() {
-        storeViewModel.data.observe(viewLifecycleOwner, {info ->
+        storeViewModel.data.observe(viewLifecycleOwner, Observer {info ->
             binding.homeTitle.text = info.name
             binding.homeAdress.text = info.address
             binding.homeDescription.text = info.description

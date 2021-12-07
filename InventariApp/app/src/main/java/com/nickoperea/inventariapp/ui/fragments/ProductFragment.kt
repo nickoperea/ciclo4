@@ -6,6 +6,7 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.lifecycle.Observer
 import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.GridLayoutManager
 import com.nickoperea.inventariapp.R
@@ -47,6 +48,7 @@ class ProductFragment : Fragment() {
 
         productAdapter.listener = object: OnProductListener {
             override fun onClick(item: Product) {
+                Log.d("PRODUCT", item.name!!)
                 productViewModel.selectProduct(item)
                 findNavController().navigate(R.id.action_productFragment_to_productDetailFragment)
             }
@@ -61,7 +63,7 @@ class ProductFragment : Fragment() {
     }
 
     fun observeViewModels() {
-        productViewModel.data.observe(viewLifecycleOwner, { products ->
+        productViewModel.data.observe(viewLifecycleOwner, Observer { products ->
             productAdapter.newDataSet(products)
         })
     }

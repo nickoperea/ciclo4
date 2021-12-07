@@ -5,7 +5,7 @@ import androidx.room.Entity
 import androidx.room.PrimaryKey
 import com.nickoperea.inventariapp.utils.STORE_TABLE_NAME
 
-@Entity(tableName = STORE_TABLE_NAME)
+@Entity(tableName = "stores")
 data class StoreInfo (
     @PrimaryKey @ColumnInfo(name = "id") var id: Long = 0L,
     @ColumnInfo(name = "name") var name: String? = "",

@@ -9,8 +9,8 @@ import com.nickoperea.inventariapp.utils.COMMENT_TABLE_NAME
 @Dao
 interface CommentDao {
     @Insert
-    fun insertComments(comments: List<Comment>)
+    suspend fun insertComments(comments: List<Comment>)
 
-    @Query("SELECT * FROM $COMMENT_TABLE_NAME")
-    fun getAllComments(): List<Comment>
+    @Query("SELECT * FROM comments")
+    suspend fun getAllComments(): List<Comment>
 }

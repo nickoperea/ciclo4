@@ -1,33 +1,33 @@
 {
   "project_info": {
-    "project_number": "1057193704735",
-    "project_id": "inventariapp-75b0f",
-    "storage_bucket": "inventariapp-75b0f.appspot.com"
+    "project_number": "1060913421471",
+    "project_id": "inventariapp-495c7",
+    "storage_bucket": "inventariapp-495c7.appspot.com"
   },
   "client": [
     {
       "client_info": {
-        "mobilesdk_app_id": "1:1057193704735:android:91d62f3fa4d30fa757842a",
+        "mobilesdk_app_id": "1:1060913421471:android:504a029f7777fa576016aa",
         "android_client_info": {
           "package_name": "com.nickoperea.inventariapp"
         }
       },
       "oauth_client": [
         {
-          "client_id": "1057193704735-1g2ajpoao7f86ou3b335i7tg56sqbkda.apps.googleusercontent.com",
+          "client_id": "1060913421471-du5ii2ari7sjij38v949v0rl583pbei5.apps.googleusercontent.com",
           "client_type": 3
         }
       ],
       "api_key": [
         {
-          "current_key": "AIzaSyBYKWdXD3DFQG0kvJZVfUlCwpb0jUTZrYA"
+          "current_key": "AIzaSyCdtm_O3p_uycXoS9Gs0DoN9sVEKgp3h1E"
         }
       ],
       "services": {
         "appinvite_service": {
           "other_platform_oauth_client": [
             {
-              "client_id": "1057193704735-1g2ajpoao7f86ou3b335i7tg56sqbkda.apps.googleusercontent.com",
+              "client_id": "1060913421471-du5ii2ari7sjij38v949v0rl583pbei5.apps.googleusercontent.com",
               "client_type": 3
             }
           ]

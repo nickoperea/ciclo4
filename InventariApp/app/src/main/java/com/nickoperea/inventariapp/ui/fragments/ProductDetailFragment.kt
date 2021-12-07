@@ -5,6 +5,7 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.lifecycle.Observer
 import com.bumptech.glide.Glide
 import com.nickoperea.inventariapp.R
 import com.nickoperea.inventariapp.databinding.FragmentProductDetailBinding
@@ -31,7 +32,7 @@ class ProductDetailFragment : Fragment() {
     }
 
     private fun observeViewModel() {
-        productViewModel.selected.observe(viewLifecycleOwner, { product ->
+        productViewModel.selected.observe(viewLifecycleOwner, Observer { product ->
             binding.productDetailTitle.text = product.name
             binding.productDetailPrice.text = product.price.toString()
             binding.productDetailDescription.text = product.description

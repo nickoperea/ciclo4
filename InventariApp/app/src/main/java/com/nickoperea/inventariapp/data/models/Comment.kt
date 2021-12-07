@@ -5,7 +5,7 @@ import androidx.room.Entity
 import androidx.room.PrimaryKey
 import com.nickoperea.inventariapp.utils.COMMENT_TABLE_NAME
 
-@Entity(tableName = COMMENT_TABLE_NAME)
+@Entity(tableName = "comments")
 data class Comment(
     @PrimaryKey @ColumnInfo(name = "id") var id: Long? = 0L,
     @ColumnInfo(name = "description") var description: String? = "",
