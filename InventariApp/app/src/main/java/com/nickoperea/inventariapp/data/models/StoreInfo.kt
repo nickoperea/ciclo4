@@ -12,6 +12,6 @@ data class StoreInfo (
     @ColumnInfo(name = "image") var image: String? = "",
     @ColumnInfo(name = "address") var address: String? = "",
     @ColumnInfo(name = "description") var description: String? = "",
-    @ColumnInfo(name = "latitude") var latitude: Double? = 0.0,
-    @ColumnInfo(name = "longitude") var longitude: Double? = 0.0
+    @ColumnInfo(name = "latitude") var latitude: Double? = 4.674458,
+    @ColumnInfo(name = "longitude") var longitude: Double? = -74.047702
 )
