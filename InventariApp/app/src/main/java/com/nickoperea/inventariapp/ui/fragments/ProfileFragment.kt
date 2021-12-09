@@ -14,8 +14,12 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.core.app.ActivityCompat
 import androidx.core.content.ContextCompat
+import androidx.lifecycle.Observer
 import com.nickoperea.inventariapp.databinding.FragmentCommentBinding
 import com.nickoperea.inventariapp.databinding.FragmentProfileBinding
+import com.nickoperea.inventariapp.ui.activities.MainActivity
+import com.nickoperea.inventariapp.ui.viewmodels.LoginViewModel
+import org.koin.androidx.viewmodel.ext.android.viewModel
 import java.lang.Exception
 import java.util.jar.Manifest
 
@@ -28,6 +32,7 @@ class ProfileFragment : Fragment() {
 
     private var _binding: FragmentProfileBinding? = null
     private val binding get() = _binding!!
+    private val loginViewModel: LoginViewModel by viewModel()
 
     private val REQUEST_CAMERA_PERMISSION = 1
     private val REQUEST_IMAGE = 2
@@ -44,6 +49,8 @@ class ProfileFragment : Fragment() {
     override fun onStart() {
         super.onStart()
         checkPermission()
+        observerViewModels()
+        loginViewModel.loggedIn()
 
         binding.profileImage.setOnClickListener {
             if (ContextCompat.checkSelfPermission(requireContext(), android.Manifest.permission.CAMERA) == PackageManager.PERMISSION_GRANTED){
@@ -59,6 +66,10 @@ class ProfileFragment : Fragment() {
             }
         }
 
+        binding.profileLogOut.setOnClickListener {
+            loginViewModel.logOut()
+        }
+
     }
 
     override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
@@ -68,6 +79,18 @@ class ProfileFragment : Fragment() {
                 binding.profileImage.setImageBitmap(bitmap)
             }
         }
+    }
+
+    private fun observerViewModels(){
+        loginViewModel.user.observe(viewLifecycleOwner, Observer { user ->
+            if (user != null) {
+                binding.profileName.text = user!!.displayName
+            } else {
+                val intent = Intent(requireContext(), MainActivity::class.java)
+                startActivity(intent)
+                requireActivity().finish()
+            }
+        })
     }
 
     private fun checkPermission(){

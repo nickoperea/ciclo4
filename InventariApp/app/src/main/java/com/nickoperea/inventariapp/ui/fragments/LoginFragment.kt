@@ -6,16 +6,22 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Toast
+import androidx.lifecycle.Observer
 import androidx.navigation.fragment.findNavController
 import com.nickoperea.inventariapp.ui.activities.HomeActivity
 import com.nickoperea.inventariapp.R
 import com.nickoperea.inventariapp.databinding.FragmentLoginBinding
 import com.nickoperea.inventariapp.isValidEmail
+import com.nickoperea.inventariapp.ui.viewmodels.LoginViewModel
+import org.koin.androidx.viewmodel.ext.android.viewModel
 
 class LoginFragment : Fragment() {
 
     private var _binding: FragmentLoginBinding? = null
     private val binding get() = _binding!!
+
+    private val LoginViewModel: LoginViewModel by viewModel()
 
 
     override fun onCreateView(
@@ -29,6 +35,7 @@ class LoginFragment : Fragment() {
 
     override fun onStart() {
         super.onStart()
+        observeViewModel()
         binding.loginButton.setOnClickListener {
             var isValid = true
 
@@ -47,12 +54,26 @@ class LoginFragment : Fragment() {
             }
 
             if(isValid) {
-                startActivity(Intent(requireContext(), HomeActivity::class.java))
+                LoginViewModel.logIn(binding.LoginEmail.text.toString(), binding.LoginPassword.text.toString())
+//                startActivity(Intent(requireContext(), HomeActivity::class.java))
             }
         }
         binding.registerButton.setOnClickListener {
             findNavController().navigate(R.id.action_loginFragment_to_signupFragment)
         }
+    }
+
+    private fun observeViewModel(){
+        LoginViewModel.user.observe(viewLifecycleOwner, Observer { user ->
+            if(user != null){
+                val intent = Intent(requireContext(), HomeActivity::class.java)
+                startActivity(intent)
+            }
+
+        })
+        LoginViewModel.error.observe(viewLifecycleOwner, Observer { message ->
+            Toast.makeText(requireContext(), message, Toast.LENGTH_LONG).show()
+        })
     }
 
 }
