@@ -2,7 +2,6 @@ package com.nickoperea.inventariapp.ui.fragments
 
 import android.Manifest.permission.CAMERA
 import android.app.Activity
-import android.content.Context
 import android.content.Intent
 import android.content.pm.PackageManager
 import android.graphics.Bitmap
@@ -14,10 +13,11 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.core.app.ActivityCompat
 import androidx.core.content.ContextCompat
-import com.nickoperea.inventariapp.databinding.FragmentCommentBinding
 import com.nickoperea.inventariapp.databinding.FragmentProfileBinding
+import com.nickoperea.inventariapp.ui.activities.MainActivity
+import com.nickoperea.inventariapp.ui.viewmodels.LoginViewModel
+import org.koin.androidx.viewmodel.ext.android.viewModel
 import java.lang.Exception
-import java.util.jar.Manifest
 
 /**
  * A simple [Fragment] subclass.
@@ -28,6 +28,7 @@ class ProfileFragment : Fragment() {
 
     private var _binding: FragmentProfileBinding? = null
     private val binding get() = _binding!!
+    private val loginViewModel: LoginViewModel by viewModel()
 
     private val REQUEST_CAMERA_PERMISSION = 1
     private val REQUEST_IMAGE = 2
@@ -35,7 +36,7 @@ class ProfileFragment : Fragment() {
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
-    ): View? {
+    ): View {
         // Inflate the layout for this fragment
         _binding = FragmentProfileBinding.inflate(inflater, container, false)
         return binding.root
@@ -44,9 +45,11 @@ class ProfileFragment : Fragment() {
     override fun onStart() {
         super.onStart()
         checkPermission()
+        observerViewModels()
+        loginViewModel.loggedIn()
 
         binding.profileImage.setOnClickListener {
-            if (ContextCompat.checkSelfPermission(requireContext(), android.Manifest.permission.CAMERA) == PackageManager.PERMISSION_GRANTED){
+            if (ContextCompat.checkSelfPermission(requireContext(), CAMERA) == PackageManager.PERMISSION_GRANTED){
                 Intent(MediaStore.ACTION_IMAGE_CAPTURE).also { intent ->
                     try {
                         startActivityForResult(intent, REQUEST_IMAGE )
@@ -57,6 +60,10 @@ class ProfileFragment : Fragment() {
 
                 }
             }
+        }
+
+        binding.profileLogOut.setOnClickListener {
+            loginViewModel.logOut()
         }
 
     }
@@ -70,8 +77,20 @@ class ProfileFragment : Fragment() {
         }
     }
 
+    private fun observerViewModels(){
+        loginViewModel.user.observe(viewLifecycleOwner, { user ->
+            if (user != null) {
+                binding.profileName.text = user.displayName
+            } else {
+                val intent = Intent(requireContext(), MainActivity::class.java)
+                startActivity(intent)
+                requireActivity().finish()
+            }
+        })
+    }
+
     private fun checkPermission(){
-        if(ContextCompat.checkSelfPermission(requireContext(), android.Manifest.permission.CAMERA) != PackageManager.PERMISSION_GRANTED)
-            ActivityCompat.requestPermissions(requireActivity(), arrayOf(android.Manifest.permission.CAMERA), REQUEST_CAMERA_PERMISSION)
+        if(ContextCompat.checkSelfPermission(requireContext(), CAMERA) != PackageManager.PERMISSION_GRANTED)
+            ActivityCompat.requestPermissions(requireActivity(), arrayOf(CAMERA), REQUEST_CAMERA_PERMISSION)
     }
 }

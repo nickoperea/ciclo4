@@ -9,7 +9,7 @@ class UserRepository(private val dataSource: FirebaseAuth) {
         return dataSource.currentUser
     }
 
-    suspend fun signUp(email: String, name: String, password: String): FirebaseUser {
+    suspend fun signUp(email: String, name: String, password: String): FirebaseUser? {
         try {
             dataSource.createUserWithEmailAndPassword(email, password).await()
             val user = dataSource.currentUser

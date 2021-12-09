@@ -6,11 +6,11 @@ import android.os.Bundle
 import android.view.animation.Animation
 import android.view.animation.AnimationUtils
 import com.nickoperea.inventariapp.R
-import com.nickoperea.inventariapp.data.mockups.StoreInfoMock
 import com.nickoperea.inventariapp.data.models.Comment
 import com.nickoperea.inventariapp.data.models.Product
 import com.nickoperea.inventariapp.data.models.StoreInfo
 import com.nickoperea.inventariapp.databinding.ActivitySplashBinding
+import com.nickoperea.inventariapp.ui.viewmodels.LoginViewModel
 import com.nickoperea.inventariapp.ui.viewmodels.SplashViewModel
 import org.koin.androidx.viewmodel.ext.android.viewModel
 
@@ -18,6 +18,7 @@ class SplashActivity : AppCompatActivity() {
 
     private lateinit var binding: ActivitySplashBinding
     private val splashViewModel: SplashViewModel by viewModel()
+    private val loginViewModel: LoginViewModel by viewModel()
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -35,6 +36,16 @@ class SplashActivity : AppCompatActivity() {
             }
 
             override fun onAnimationEnd(animation: Animation?) {
+                loginViewModel.user.observe(this@SplashActivity, { user ->
+                    if (user == null){
+                        val intent = Intent(applicationContext,MainActivity::class.java)
+                        startActivity(intent)
+                    }else{
+                        val intent = Intent(applicationContext, HomeActivity::class.java)
+                        startActivity(intent)
+                    }
+                    finish()
+                })
                 startActivity(intent)
                 finish()
             }
@@ -46,6 +57,7 @@ class SplashActivity : AppCompatActivity() {
     }
 
     private fun loadInformation() {
+        loginViewModel.loggedIn()
         splashViewModel.loadInformation(
             StoreInfo(
                 1,

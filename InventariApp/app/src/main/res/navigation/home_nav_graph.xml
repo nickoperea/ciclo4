@@ -17,7 +17,8 @@
         tools:layout="@layout/fragment_product" >
         <action
             android:id="@+id/action_productFragment_to_productDetailFragment"
-            app:destination="@id/productDetailFragment" />
+            app:destination="@id/productDetailFragment"
+            app:popUpTo="@id/productFragment" />
     </fragment>
     <fragment
         android:id="@+id/profileFragment"
