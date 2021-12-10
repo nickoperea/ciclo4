@@ -12,4 +12,6 @@ data class Comment(
     @ColumnInfo(name = "author") var author: String? = "",
     @ColumnInfo(name = "image") var image: String? = "",
     @ColumnInfo(name = "date") var date: String? = ""
-)
+) {
+    constructor(): this(0L, "", "", "", "") {}
+}

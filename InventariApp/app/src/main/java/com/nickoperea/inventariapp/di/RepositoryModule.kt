@@ -7,8 +7,8 @@ import com.nickoperea.inventariapp.data.repositories.UserRepository
 import org.koin.dsl.module
 
 val repoModule = module {
-    single { StoreRepository(get(), get()) }
-    single { ProductRepository(get(), get()) }
-    single { CommentRepository(get(), get()) }
-    single { UserRepository(get()) }
+    single { StoreRepository(get(), get(), get()) }
+    single { ProductRepository(get(), get(), get()) }
+    single { CommentRepository(get(), get(), get()) }
+    single { UserRepository(get(), get()) }
 }

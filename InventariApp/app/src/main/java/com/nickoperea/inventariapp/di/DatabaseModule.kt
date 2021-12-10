@@ -11,5 +11,4 @@ val databaseModule = module {
     single { get<AppDatabase>().commendDao() }
     single { get<AppDatabase>().productDao() }
     single { get<AppDatabase>().storeDao() }
-    single { FirebaseAuth.getInstance() }
 }

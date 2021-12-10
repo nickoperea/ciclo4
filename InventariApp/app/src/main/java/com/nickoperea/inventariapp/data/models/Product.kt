@@ -13,4 +13,6 @@ data class Product (
     @ColumnInfo(name = "description") var description: String? = "",
     @ColumnInfo(name = "price") var price: Double? = 0.0,
     @ColumnInfo(name = "stock") var stock: Int? = 0
-)
+) {
+    constructor(): this(0L, "", "", "", 0.0, 0)
+}

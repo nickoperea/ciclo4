@@ -1,5 +1,6 @@
 package com.nickoperea.inventariapp.ui.viewmodels
 
+import android.graphics.Bitmap
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
@@ -45,6 +46,12 @@ class LoginViewModel(private val repo: UserRepository): ViewModel() {
     fun loggedIn(){
         viewModelScope.launch {
             _user.postValue(repo.logOut())
+        }
+    }
+
+    fun uploadImage(bitmap: Bitmap) {
+        viewModelScope.launch {
+            _user.postValue(repo.uploadImage(bitmap))
         }
     }
 }

@@ -14,4 +14,6 @@ data class StoreInfo (
     @ColumnInfo(name = "description") var description: String? = "",
     @ColumnInfo(name = "latitude") var latitude: Double? = 4.674458,
     @ColumnInfo(name = "longitude") var longitude: Double? = -74.047702
-)
+) {
+    constructor(): this(0L, "", "", "", "", 0.0, 0.0)
+}

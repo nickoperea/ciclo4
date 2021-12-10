@@ -13,6 +13,7 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.core.app.ActivityCompat
 import androidx.core.content.ContextCompat
+import com.bumptech.glide.Glide
 import com.nickoperea.inventariapp.databinding.FragmentProfileBinding
 import com.nickoperea.inventariapp.ui.activities.MainActivity
 import com.nickoperea.inventariapp.ui.viewmodels.LoginViewModel
@@ -72,7 +73,8 @@ class ProfileFragment : Fragment() {
         if(resultCode == Activity.RESULT_OK){
             if(requestCode == REQUEST_IMAGE){
                 val bitmap = data?.extras?.get("data") as Bitmap
-                binding.profileImage.setImageBitmap(bitmap)
+//                binding.profileImage.setImageBitmap(bitmap)
+                loginViewModel.uploadImage(bitmap)
             }
         }
     }
@@ -81,6 +83,9 @@ class ProfileFragment : Fragment() {
         loginViewModel.user.observe(viewLifecycleOwner, { user ->
             if (user != null) {
                 binding.profileName.text = user.displayName
+                if (user.photoUrl != null) {
+                    Glide.with(binding.root).load(user.photoUrl).into(binding.profileImage)
+                }
             } else {
                 val intent = Intent(requireContext(), MainActivity::class.java)
                 startActivity(intent)
